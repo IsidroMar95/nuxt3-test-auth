@@ -40,12 +40,12 @@
 <script setup>
 definePageMeta({auth: false})
 
-const email = ref('isidro@gmail.com')
+const email = ref('isidro.ram@gmail.com')
 const password = ref('password')
 
 const {signIn} = useSession()
 
-function login() {
-  signIn('credentials', {username: email.value, password: password.value})
+async function login() {
+  await signIn('credentials', {email: email.value, password: password.value, callbackUrl: '/dashboard'})
 }
 </script>

@@ -32,9 +32,13 @@ export default defineNuxtConfig({
     },
   ],
   auth: {
+    origin: process.env.NUXT_ORIGIN,
     enableGlobalAppMiddleware: true
   },
   headlessui: {
     prefix: 'Headless'
   },
+  runtimeConfig: {
+    API_BASE_URL: process.env.LARAVEL_API_URL
+  }
 })
