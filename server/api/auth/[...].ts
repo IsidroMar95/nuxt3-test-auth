@@ -142,7 +142,7 @@ export default NuxtAuthHandler({
   callbacks: {
     async jwt({token, user, account}) {
       if (account && user) {
-        // console.warn("JWT callback", {token, user, account});
+        console.warn("JWT callback", {token, user, account});
         return {
           ...token,
           ...user,
